@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background-color: #D1DAE7;
+}
+.container {
+	position: relative;
+	overflow: hidden;
+	width: 396px;
+	height: 150px;
+	border-radius: 100px;
+	background-color: #347ab7;
+	transition: 1.5s all;
+	box-shadow:  0px 3px 3px rgba(236, 236, 236, 0.8), -1px -3px 4px rgba(121, 118, 118, 0.5);
+}
+label input {
+	appearance: none;
+}
+.sun {
+	display: inline-block;
+	position: absolute;
+	border-radius: 50%;
+	left: 15px;
+	top: 12px;
+	width: 135px;
+	height: 135px;
+	background: url('Sol.png');
+	background-size: auto 135px;
+	background-repeat: no-repeat;
+	transition: 1s;
+	overflow: hidden;
+	z-index: 10;
+}
+.sun::before{
+	position: absolute;
+	border-radius: 50%;
+	content: '';
+	left: -150px;
+	top: 0;
+	width: 135px;
+	height: 135px;
+	background: url('Lua.png');
+	background-size: auto 135px;
+	background-repeat: no-repeat;
+	transition: 1s all;
+}
+.cloud {
+	position: absolute;
+	left: 50px;
+	top: 10px;
+	width: 370px;
+	height: 150px;
+	background: url('Nuvem.png');
+	background-repeat: repeat;
+	background-size: auto;
+	background-size: auto 198px;
+	background-repeat: no-repeat;
+	transition: .5s all;
+	z-index: 11;
+}
+.stars {
+	position: absolute;
+	opacity: 0;
+	left: 50px;
+	top: -150px;
+	width: 370px;
+	height: 150px;
+	background: url('Stars.png');
+	background-repeat: repeat;
+	background-size: auto;
+	background-size: auto 154px;
+	background-repeat: no-repeat;
+	transition: .5s all;
+	transition-delay: .2s;
+	z-index: 9;
+}
+.sky-shadow {
+	position: absolute;
+	left: 80px;
+	top: 0;
+	height: 100%;
+	z-index: 9;
+	transition: 1.5s;
+}
+.sky {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	clip-path: circle(55.9% at 50% 50%);
+	height: 100%;
+	transition: 1.5s;
+}
+.sky-3 {
+	background-color: #699DC9;
+	width: 265px;
+}
+.sky-2 {
+	background-color: #5A92C1;
+	width: 410px;
+}
+.sky-1 {
+	background-color: #4987BC;
+	width: 560px;
+}
+.box-shadow {
+	position: absolute;
+	z-index: 20;
+	width: 396px;
+	height: 150px;
+	border-radius: 100px;
+	left: 0;
+	top: 0;
+	box-shadow:  0px 3px 3px rgba(236, 236, 236, 0.8), -1px -3px 4px rgba(121, 118, 118, 0.5), inset 0px 7px 5px rgba(48, 45, 45, 0.6), inset -1px -4px 4px rgba(70, 70, 70, 0.8);
+}
+label input:checked ~ div .sun  {
+	left: 250px;
+}
+label input:checked ~ div .sun::before {
+	left: 0;
+}
+label input:checked ~ div .cloud {
+	top: 200px;
+} 
+label input:checked ~ div .stars {
+	opacity: 1;
+	top: 10px;
+} 
+label input:checked ~ div {
+	background-color: #1b1e2a;
+}
+label input:checked ~ div .sky-shadow{
+	left: 296px;
+}
+label input:checked ~ div .sky-1 {
+	background-color: #26323B;
+}
+label input:checked ~ div .sky-2 {
+	background-color: #404350;
+}
+label input:checked ~ div .sky-3 {
+	background-color: #4F525D;
+}
